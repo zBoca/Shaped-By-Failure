@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccu8k5bxk4pge"]
+
+[ext_resource type="PackedScene" uid="uid://bhtxfoc44c866" path="res://entities/player/player.tscn" id="2_84y5r"]
+[ext_resource type="PackedScene" uid="uid://dwhpg4fmsh0g2" path="res://entities/player/playerCam.tscn" id="3_i0eti"]
+[ext_resource type="PackedScene" uid="uid://l42dh3ciyvya" path="res://entities/enemies/debugEnemy/debugEnemy.tscn" id="3_m0h1h"]
+
+[node name="Hub Scene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_84y5r")]
+
+[node name="Debug Enemy" parent="." instance=ExtResource("3_m0h1h")]
+position = Vector2(364, -5)
+
+[node name="Player Cam" parent="." instance=ExtResource("3_i0eti")]

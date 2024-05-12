@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4n3xqs2hxhs1"]
+
+[ext_resource type="Script" path="res://entities/bulletPatterns/spiralController.gd" id="1_ag638"]
+
+[node name="Spiral" type="Node2D"]
+script = ExtResource("1_ag638")
+
+[node name="timeBetween" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="rotator" type="Node2D" parent="."]
+
+[node name="t" type="Marker2D" parent="rotator"]
+position = Vector2(0, -1)
+rotation = -1.5708
+
+[node name="r" type="Marker2D" parent="rotator"]
+position = Vector2(1, 0)
+
+[node name="d" type="Marker2D" parent="rotator"]
+position = Vector2(0, 1)
+rotation = 1.5708
+
+[node name="l" type="Marker2D" parent="rotator"]
+position = Vector2(-1, 0)
+rotation = -3.14159

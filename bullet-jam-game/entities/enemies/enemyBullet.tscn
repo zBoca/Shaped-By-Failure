@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1f0r58bo10q5"]
+
+[ext_resource type="Script" path="res://entities/enemies/enemyBullet.gd" id="1_ghj2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_762lv"]
+size = Vector2(15, 9)
+
+[node name="Enemy Bullet" type="Area2D" groups=["bullet"]]
+script = ExtResource("1_ghj2t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -5.0
+offset_right = 7.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.83705, 0.141662, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_762lv")
+
+[connection signal="body_entered" from="." to="." method="onHit"]

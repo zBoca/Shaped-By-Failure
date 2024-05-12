@@ -1,0 +1,120 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkbco8j8tbbwl"]
+
+[ext_resource type="Texture2D" uid="uid://82sxud1wiqmb" path="res://icon.svg" id="1_m1s7i"]
+
+[node name="Death Nerf Chooser" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -147.0
+offset_top = 30.0
+offset_right = 147.0
+offset_bottom = 80.0
+grow_horizontal = 2
+text = "Its not too late to be brought back. . .
+                   For a price."
+
+[node name="Option1" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 84.0
+offset_top = 186.0
+offset_right = 356.0
+offset_bottom = 505.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Option1"]
+position = Vector2(123, 82)
+texture = ExtResource("1_m1s7i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Option1"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -168.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Choice 1:
+
+choice 1 text"
+
+[node name="TextureButton" type="TextureButton" parent="Option1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Option2" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 429.0
+offset_top = 186.0
+offset_right = 701.0
+offset_bottom = 505.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Option2"]
+position = Vector2(123, 82)
+texture = ExtResource("1_m1s7i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Option2"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -168.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Choice 2:
+
+choice 2 text"
+
+[node name="TextureButton" type="TextureButton" parent="Option2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Option3" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 774.0
+offset_top = 186.0
+offset_right = 1046.0
+offset_bottom = 505.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Option3"]
+position = Vector2(123, 82)
+texture = ExtResource("1_m1s7i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Option3"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -168.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Choice 3:
+
+choice 3 text"
+
+[node name="TextureButton" type="TextureButton" parent="Option3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

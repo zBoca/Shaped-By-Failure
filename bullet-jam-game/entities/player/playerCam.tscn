@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwhpg4fmsh0g2"]
+
+[ext_resource type="Script" path="res://entities/player/camController.gd" id="1_ju15u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7l55"]
+size = Vector2(20, 660)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpdjf"]
+size = Vector2(1204, 20)
+
+[sub_resource type="Animation" id="Animation_hdypc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_877ha"]
+resource_name = "fadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c2ywo"]
+resource_name = "fadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q8k47"]
+_data = {
+"RESET": SubResource("Animation_hdypc"),
+"fadeIn": SubResource("Animation_877ha"),
+"fadeOut": SubResource("Animation_c2ywo")
+}
+
+[node name="Player Cam" type="Node2D"]
+script = ExtResource("1_ju15u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Area2D" type="StaticBody2D" parent="Camera2D" groups=["camBorder", "wall"]]
+
+[node name="borderL" type="CollisionShape2D" parent="Camera2D/Area2D"]
+position = Vector2(-592, 0)
+shape = SubResource("RectangleShape2D_w7l55")
+
+[node name="borderR" type="CollisionShape2D" parent="Camera2D/Area2D"]
+position = Vector2(592, 0)
+shape = SubResource("RectangleShape2D_w7l55")
+
+[node name="borderT" type="CollisionShape2D" parent="Camera2D/Area2D"]
+position = Vector2(0, -340)
+shape = SubResource("RectangleShape2D_dpdjf")
+
+[node name="borderB" type="CollisionShape2D" parent="Camera2D/Area2D"]
+position = Vector2(0, 340)
+shape = SubResource("RectangleShape2D_dpdjf")
+
+[node name="fadeAnimator" type="AnimationPlayer" parent="Camera2D"]
+root_node = NodePath("ColorRect")
+libraries = {
+"": SubResource("AnimationLibrary_q8k47")
+}
+autoplay = "fadeIn"
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/fadeAnimator"]
+auto_translate_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="fadeOutTimer" type="Timer" parent="Camera2D/fadeAnimator"]
+wait_time = 0.5
+one_shot = true

@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhtxfoc44c866"]
+
+[ext_resource type="Script" path="res://entities/player/playerController.gd" id="1_o1fl2"]
+[ext_resource type="Script" path="res://entities/player/aimWeapon.gd" id="2_0jvtv"]
+[ext_resource type="PackedScene" uid="uid://bkbco8j8tbbwl" path="res://ui/deathNerfChooser.tscn" id="3_7w32t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18u0x"]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_o1fl2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_18u0x")
+
+[node name="weaponHold" type="Node2D" parent="."]
+script = ExtResource("2_0jvtv")
+
+[node name="weapon" type="ColorRect" parent="weaponHold"]
+offset_top = -3.0
+offset_right = 29.0
+offset_bottom = 3.0
+color = Color(0.118581, 0.118581, 0.118581, 1)
+
+[node name="Marker2D" type="Marker2D" parent="weaponHold"]
+position = Vector2(26, 0)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.535743, 0.278049, 0.0167766, 1)
+
+[node name="dashLength" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="dashCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="shootCooldown" type="Timer" parent="."]
+wait_time = 0.45
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Death Nerf Chooser" parent="CanvasLayer" instance=ExtResource("3_7w32t")]
+visible = false
+size_flags_horizontal = 4

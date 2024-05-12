@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn8mofmy5bk1s"]
+
+[ext_resource type="Script" path="res://autoloads/nerfTracker/nerfTracker.gd" id="1_47y44"]
+
+[node name="Nerf Tracker" type="Node"]
+script = ExtResource("1_47y44")
