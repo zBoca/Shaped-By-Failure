@@ -23,3 +23,7 @@ rotation = 0.174533
 [node name="5" type="Marker2D" parent="."]
 position = Vector2(2, -1)
 rotation = 0.349066
+
+[node name="timeBefore" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true

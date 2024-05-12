@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var bulletScene = preload("res://entities/enemies/enemyBullet.tscn")
+@onready var timeBefore = $timeBefore
 @onready var spawn1 = $"1"
 @onready var spawn2 = $"2"
 @onready var spawn3 = $"3"
@@ -11,6 +12,9 @@ func _process(_delta: float) -> void:
 	look_at(get_parent().get_parent().get_node("Player").global_position)
 
 func shoot() -> void:
+	timeBefore.start()
+	await timeBefore.timeout
+	
 	var bullet = bulletScene.instantiate()
 	get_parent().get_parent().add_child(bullet)
 	bullet.rotation = spawn1.global_rotation
