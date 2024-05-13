@@ -1,25 +1,25 @@
 extends Node2D
 
-@onready var colorRect = $ColorRect
 @onready var dmgFlashTimer = $dmgFlash
 @onready var atkCooldown = $atkCooldown
+@onready var nerfTracker = get_node("/root/NerfTracker")
 @onready var atk1 = $"5ShotDirect"
 @onready var atk2 = $Spiral
 @onready var atk3 = $Shotgun
+var maxHp = 50
 var hp = 50
-var red = Color("ce718b")
-var white = Color("ffffff")
+@onready var sprite = $AnimatedSprite2D
 func takeDmg():
 	hp -= 2
 	if hp < 1:
 		queue_free()
 	
-	colorRect.color = red
+	sprite.frame = 1
 	
 	dmgFlashTimer.start()
 	await dmgFlashTimer.timeout
 	
-	colorRect.color = white
+	sprite.frame = 0
 
 func _ready() -> void:
 	randomize()
@@ -35,7 +35,12 @@ func attack() -> void:
 		2:
 			await atk3.shoot()
 	
+	atkCooldown.wait_time = nerfTracker.enemyShootMulti
 	atkCooldown.start()
 	await atkCooldown.timeout
 	
 	attack()
+
+func increaseHpVals():
+	maxHp *= 1.2
+	hp *= 1.2

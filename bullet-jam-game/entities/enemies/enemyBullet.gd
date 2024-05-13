@@ -1,8 +1,8 @@
 extends Area2D
 
-
+@onready var nerfTracker = get_node("/root/NerfTracker")
 func _physics_process(delta: float) -> void:
-	var moveVector = transform.x * 500
+	var moveVector = transform.x * nerfTracker.enemyBulletSpeed
 	position += moveVector * delta
 
 

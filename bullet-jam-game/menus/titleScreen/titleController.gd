@@ -12,4 +12,4 @@ func playButtonPressed() -> void:
 	fadeTimer.start()
 	await fadeTimer.timeout
 	
-	get_tree().change_scene_to_file("res://levels/hub/hubScene.tscn")
+	get_tree().change_scene_to_file("res://levels/debugLevel/debugLevel.tscn")

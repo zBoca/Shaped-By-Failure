@@ -1,7 +1,7 @@
 extends Node2D
 
 func _physics_process(delta: float) -> void:
-	var moveVector = transform.x * 500
+	var moveVector = transform.x * 700
 	position += moveVector * delta
 
 

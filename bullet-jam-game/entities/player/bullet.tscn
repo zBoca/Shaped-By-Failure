@@ -1,28 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2dt3kkogkrly"]
+[gd_scene load_steps=4 format=3 uid="uid://c2dt3kkogkrly"]
 
 [ext_resource type="Script" path="res://entities/player/bullet.gd" id="1_wr2qp"]
+[ext_resource type="Texture2D" uid="uid://c21jsgsxa2g6d" path="res://entities/player/playerBullet.png" id="2_lijgu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bntyy"]
-size = Vector2(5, 5)
+size = Vector2(16, 8)
 
 [node name="Bullet" type="Area2D" groups=["bullet"]]
 script = ExtResource("1_wr2qp")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -2.5
-offset_top = -2.5
-offset_right = 2.5
-offset_bottom = 2.5
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -0.5)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_bntyy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("2_lijgu")
 
 [connection signal="body_entered" from="." to="." method="onHit"]

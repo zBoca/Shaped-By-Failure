@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwhpg4fmsh0g2"]
+[gd_scene load_steps=9 format=3 uid="uid://dwhpg4fmsh0g2"]
 
 [ext_resource type="Script" path="res://entities/player/camController.gd" id="1_ju15u"]
+[ext_resource type="Script" path="res://entities/player/cameraShakeControl.gd" id="2_ndb8q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7l55"]
 size = Vector2(20, 660)
@@ -66,6 +67,9 @@ _data = {
 script = ExtResource("1_ju15u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_ndb8q")
+randStr = 5.0
+shakeFade = 10.0
 
 [node name="Area2D" type="StaticBody2D" parent="Camera2D" groups=["camBorder", "wall"]]
 
@@ -97,12 +101,13 @@ auto_translate_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -576.0
-offset_bottom = -324.0
+offset_left = -5000.0
+offset_top = -3000.0
+offset_right = -5000.0
+offset_bottom = -3000.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(9, 9)
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 

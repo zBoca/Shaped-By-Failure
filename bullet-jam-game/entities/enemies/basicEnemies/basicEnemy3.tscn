@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3j34fyghufno"]
+
+[ext_resource type="Texture2D" uid="uid://cnxmnabe8jufx" path="res://entities/enemies/enemySprites/basicEnemy3.png" id="1_1kj3h"]
+[ext_resource type="Script" path="res://entities/enemies/basicEnemies/basicEnemy3Controller.gd" id="1_ol5hx"]
+[ext_resource type="Texture2D" uid="uid://bvkh6fb6s8gmt" path="res://entities/enemies/enemySprites/basicEnemy3Hurt.png" id="2_myu2b"]
+[ext_resource type="PackedScene" uid="uid://iyy1rqxkcxwq" path="res://entities/bulletPatterns/5shotDirect.tscn" id="3_mb2xt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5h7u4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1kj3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_myu2b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc5u6"]
+size = Vector2(32, 32)
+
+[node name="BasicEnemy3" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_ol5hx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5h7u4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mc5u6")
+
+[node name="dmgFlash" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="atkCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="5ShotDirect" parent="." groups=["attacks"] instance=ExtResource("3_mb2xt")]
