@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var dmgFlashTimer = $dmgFlash
 @onready var atkCooldown = $atkCooldown
 @onready var nerfTracker = get_node("/root/NerfTracker")
-@onready var atk1 = $"5ShotDirect"
+@onready var atk1 = $"1ShotDirect"
 var maxHp = 25
 var hp = 25
 @onready var sprite = $AnimatedSprite2D
@@ -27,7 +27,7 @@ func _ready() -> void:
 func attack() -> void:
 	await atk1.shoot()
 	
-	atkCooldown.wait_time = nerfTracker.enemyShootMulti
+	atkCooldown.wait_time = nerfTracker.enemyShootMulti / 2
 	atkCooldown.start()
 	await atkCooldown.timeout
 	

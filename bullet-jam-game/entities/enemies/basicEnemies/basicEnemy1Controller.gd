@@ -4,7 +4,6 @@ extends CharacterBody2D
 @onready var atkCooldown = $atkCooldown
 @onready var nerfTracker = get_node("/root/NerfTracker")
 @onready var atk1 = $"5ShotDirect"
-@onready var atk2 = $Shotgun
 var maxHp = 25
 var hp = 25
 @onready var sprite = $AnimatedSprite2D
@@ -21,16 +20,10 @@ func takeDmg():
 	sprite.frame = 0
 
 func _ready() -> void:
-	randomize()
 	attack()
 
 func attack() -> void:
-	var atk = randi_range(0, 1)
-	match atk:
-		0:
-			await atk1.shoot()
-		1:
-			await atk2.shoot()
+	await atk1.shoot()
 	
 	atkCooldown.wait_time = nerfTracker.enemyShootMulti
 	atkCooldown.start()

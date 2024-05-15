@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3j34fyghufno"]
+[gd_scene load_steps=8 format=3 uid="uid://d3j34fyghufno"]
 
 [ext_resource type="Texture2D" uid="uid://cnxmnabe8jufx" path="res://entities/enemies/enemySprites/basicEnemy3.png" id="1_1kj3h"]
 [ext_resource type="Script" path="res://entities/enemies/basicEnemies/basicEnemy3Controller.gd" id="1_ol5hx"]
 [ext_resource type="Texture2D" uid="uid://bvkh6fb6s8gmt" path="res://entities/enemies/enemySprites/basicEnemy3Hurt.png" id="2_myu2b"]
-[ext_resource type="PackedScene" uid="uid://iyy1rqxkcxwq" path="res://entities/bulletPatterns/5shotDirect.tscn" id="3_mb2xt"]
+[ext_resource type="PackedScene" uid="uid://iyy1rqxkcxwq" path="res://entities/bulletPatterns/basic/5shotDirect.tscn" id="3_mb2xt"]
+[ext_resource type="PackedScene" uid="uid://dq6tybpct47hr" path="res://entities/bulletPatterns/basic/1shotDirect.tscn" id="5_prhki"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5h7u4"]
 animations = [{
@@ -39,3 +40,5 @@ one_shot = true
 one_shot = true
 
 [node name="5ShotDirect" parent="." groups=["attacks"] instance=ExtResource("3_mb2xt")]
+
+[node name="1ShotDirect" parent="." instance=ExtResource("5_prhki")]
