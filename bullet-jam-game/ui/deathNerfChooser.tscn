@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkbco8j8tbbwl"]
+[gd_scene load_steps=5 format=3 uid="uid://bkbco8j8tbbwl"]
 
 [ext_resource type="Texture2D" uid="uid://82sxud1wiqmb" path="res://icon.svg" id="1_m1s7i"]
 [ext_resource type="Script" path="res://ui/deathNerfController.gd" id="1_qmcym"]
+[ext_resource type="FontFile" uid="uid://buj3wt7dy82im" path="res://font.ttf" id="2_rubww"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4x0ve"]
+bg_color = Color(0.333333, 0.333333, 0.333333, 0.717647)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Death Nerf Chooser" type="Control"]
 process_mode = 3
@@ -13,18 +21,33 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qmcym")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 87.0
+offset_right = 1063.0
+offset_bottom = 568.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4x0ve")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 429.0
-offset_top = 30.0
-offset_right = -429.0
-offset_bottom = -568.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -461.0
+offset_top = 118.0
+offset_right = -161.0
+offset_bottom = 168.0
 grow_horizontal = 2
+scale = Vector2(3, 3)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_rubww")
 text = "Its not too late to be brought back. . .
-    But not without its consequences."
+   But not without its consequences."
 
 [node name="Option1" type="Control" parent="."]
 layout_mode = 1
@@ -32,9 +55,11 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 84.0
-offset_top = 186.0
+offset_top = 233.0
 offset_right = -796.0
-offset_bottom = -143.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureButton" type="Button" parent="Option1"]
 layout_mode = 1
@@ -69,9 +94,11 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 429.0
-offset_top = 186.0
+offset_top = 233.0
 offset_right = -451.0
-offset_bottom = -143.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureButton" type="Button" parent="Option2"]
 layout_mode = 1
@@ -106,9 +133,11 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 774.0
-offset_top = 186.0
+offset_top = 233.0
 offset_right = -106.0
-offset_bottom = -143.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureButton" type="Button" parent="Option3"]
 layout_mode = 1

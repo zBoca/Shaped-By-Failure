@@ -54,6 +54,7 @@ func dash():
 	hasIFrames = true
 	dir = dir * 5
 	
+	$"CanvasLayer/Bar UI".resetDash()
 	dashTimer.start()
 	await dashTimer.timeout
 	
@@ -89,7 +90,7 @@ func _on_regen_timer_timeout() -> void:
 @onready var nerf1 = $"CanvasLayer/Death Nerf Chooser/Option1"
 @onready var nerf2 = $"CanvasLayer/Death Nerf Chooser/Option2"
 @onready var nerf3 = $"CanvasLayer/Death Nerf Chooser/Option3"
-@onready var hpBar = $"CanvasLayer/Hp Bar UI/hpBar"
+@onready var hpBar = $"CanvasLayer/Bar UI/hpBar"
 var option1
 var option2
 var option3

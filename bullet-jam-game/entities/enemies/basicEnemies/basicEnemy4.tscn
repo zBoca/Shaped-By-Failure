@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://entities/enemies/basicEnemies/basicEnemy4Controller.gd" id="1_hsmjj"]
 [ext_resource type="Texture2D" uid="uid://cn8mvkdw6wqtp" path="res://entities/enemies/enemySprites/basicEnemy4.png" id="2_ijh1s"]
 [ext_resource type="Texture2D" uid="uid://dnrcbat7tktoc" path="res://entities/enemies/enemySprites/basicEnemy4Hurt.png" id="3_4npnl"]
-[ext_resource type="PackedScene" uid="uid://bjgsb4774pjfc" path="res://entities/bulletPatterns/basic/shotgun.tscn" id="4_e531w"]
+[ext_resource type="PackedScene" uid="uid://blmjbotu2vp2b" path="res://entities/bulletPatterns/basic/smallShotgun.tscn" id="4_u3fyo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4dx05"]
 animations = [{
@@ -38,4 +38,4 @@ one_shot = true
 [node name="atkCooldown" type="Timer" parent="."]
 one_shot = true
 
-[node name="Shotgun" parent="." groups=["attacks"] instance=ExtResource("4_e531w")]
+[node name="SmallShotgun" parent="." instance=ExtResource("4_u3fyo")]

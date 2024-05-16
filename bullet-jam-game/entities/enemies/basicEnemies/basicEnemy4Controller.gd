@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var dmgFlashTimer = $dmgFlash
 @onready var atkCooldown = $atkCooldown
 @onready var nerfTracker = get_node("/root/NerfTracker")
-@onready var atk1 = $"Shotgun"
+@onready var atk1 = $"SmallShotgun"
 var maxHp = 25
 var hp = 25
 @onready var sprite = $AnimatedSprite2D

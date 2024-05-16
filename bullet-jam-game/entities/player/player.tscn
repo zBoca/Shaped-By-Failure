@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://bhtxfoc44c866"]
+[gd_scene load_steps=12 format=3 uid="uid://bhtxfoc44c866"]
 
 [ext_resource type="Script" path="res://entities/player/playerController.gd" id="1_o1fl2"]
 [ext_resource type="Script" path="res://entities/player/aimWeapon.gd" id="2_0jvtv"]
 [ext_resource type="PackedScene" uid="uid://bkbco8j8tbbwl" path="res://ui/deathNerfChooser.tscn" id="3_7w32t"]
 [ext_resource type="Texture2D" uid="uid://h6g1won56c82" path="res://entities/player/sprites/player1.png" id="3_qj4ba"]
 [ext_resource type="Texture2D" uid="uid://bwcoir2f72ji8" path="res://entities/player/sprites/player4.png" id="4_fj24g"]
-[ext_resource type="PackedScene" uid="uid://c4xfx6k5vl64x" path="res://ui/hpBarUi.tscn" id="4_orrsb"]
+[ext_resource type="PackedScene" uid="uid://c4xfx6k5vl64x" path="res://ui/BarUi.tscn" id="4_orrsb"]
 [ext_resource type="Texture2D" uid="uid://0qu0halqa21v" path="res://entities/player/sprites/player3.png" id="5_cayq7"]
 [ext_resource type="Texture2D" uid="uid://rn2bdtnsd76v" path="res://entities/player/sprites/player2.png" id="6_ma7v8"]
+[ext_resource type="PackedScene" uid="uid://c7jhmpawbftiv" path="res://ui/minimap/minimap.tscn" id="9_lhhii"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18u0x"]
 size = Vector2(22, 22)
@@ -99,10 +100,12 @@ one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Bar UI" parent="CanvasLayer" instance=ExtResource("4_orrsb")]
+
+[node name="Minimap" parent="CanvasLayer" instance=ExtResource("9_lhhii")]
+
 [node name="Death Nerf Chooser" parent="CanvasLayer" instance=ExtResource("3_7w32t")]
 visible = false
 size_flags_horizontal = 4
-
-[node name="Hp Bar UI" parent="CanvasLayer" instance=ExtResource("4_orrsb")]
 
 [connection signal="timeout" from="regenTimer" to="." method="_on_regen_timer_timeout"]
