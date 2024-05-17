@@ -10,7 +10,7 @@ extends Node2D
 @onready var spawn5 = $"5"
 
 func _process(_delta: float) -> void:
-	look_at(get_parent().get_parent().get_node("Player").global_position)
+	look_at(get_parent().get_parent().get_parent().get_node("Player").global_position)
 
 func shoot() -> void:
 	timeBefore.start()

@@ -77,6 +77,9 @@ func takeDmg() -> void:
 		dead = true
 		die()
 
+func nextLevel():
+	print("advance")
+
 func doRegen() -> void:
 	if regenSpeed.is_stopped():
 		regenSpeed.wait_time = nerfTracker.regen

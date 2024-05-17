@@ -1,0 +1,102 @@
+[gd_scene load_steps=16 format=3 uid="uid://dis07xojcjg6s"]
+
+[ext_resource type="Texture2D" uid="uid://dtqda5fwnb6v1" path="res://levels/assets/portal/portalClosed.png" id="1_mcn3u"]
+[ext_resource type="Script" path="res://levels/assets/portal/portal.gd" id="1_rspjm"]
+[ext_resource type="Texture2D" uid="uid://cjfe2iyf2rqmw" path="res://levels/assets/portal/portalOpen1.png" id="2_0s75i"]
+[ext_resource type="Texture2D" uid="uid://bktqdocaya1f1" path="res://levels/assets/portal/portalOpen2.png" id="3_5snid"]
+[ext_resource type="Texture2D" uid="uid://cr038gs6gl1rk" path="res://levels/assets/portal/portalOpen3.png" id="4_4iwji"]
+[ext_resource type="Texture2D" uid="uid://cdtx2g58brcpo" path="res://levels/assets/portal/portalOpening1.png" id="5_2w8vx"]
+[ext_resource type="Texture2D" uid="uid://c7amm1gb3mv1t" path="res://levels/assets/portal/portalOpening2.png" id="6_afakx"]
+[ext_resource type="Texture2D" uid="uid://bbfm3l1f4vws4" path="res://levels/assets/portal/portalOpening3.png" id="7_1kagh"]
+[ext_resource type="Texture2D" uid="uid://c4mslk5w2au4x" path="res://levels/assets/portal/portalOpening4.png" id="8_viaet"]
+[ext_resource type="Texture2D" uid="uid://bup77or7h8gmw" path="res://levels/assets/portal/portalOpening5.png" id="9_a8nsl"]
+[ext_resource type="Texture2D" uid="uid://dexd1toltbfdx" path="res://levels/assets/portal/portalOpening6.png" id="10_a6n7c"]
+[ext_resource type="Texture2D" uid="uid://1585f35bo38m" path="res://levels/assets/portal/portalOpening7.png" id="11_hnpp5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03gj7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mcn3u")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0s75i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5snid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4iwji")
+}],
+"loop": true,
+"name": &"portalOpen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2w8vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_afakx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1kagh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_viaet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a8nsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a6n7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hnpp5")
+}],
+"loop": false,
+"name": &"portalOpening",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pma7a"]
+size = Vector2(18, 37.2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8jwi"]
+size = Vector2(24, 34)
+
+[node name="portal" type="Node2D"]
+script = ExtResource("1_rspjm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -65)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_03gj7")
+frame_progress = 1.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/StaticBody2D"]
+position = Vector2(-21, 7.39999)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_pma7a")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AnimatedSprite2D/StaticBody2D"]
+position = Vector2(21.2, 7.2)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_pma7a")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(1.90735e-07, 5.8)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_r8jwi")
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="." method="bodyEntered"]
+[connection signal="body_exited" from="AnimatedSprite2D/Area2D" to="." method="bodyLeft"]
