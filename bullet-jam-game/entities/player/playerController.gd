@@ -1,5 +1,13 @@
 extends CharacterBody2D
 
+@onready var barUi: Control = $"CanvasLayer/Bar UI"
+@onready var minimapUi: Control = $CanvasLayer/Minimap
+func _ready() -> void:
+	if get_parent().name == "Hub Level":
+		inHub = true
+		barUi.hide()
+		minimapUi.hide()
+
 func _physics_process(_delta: float) -> void:
 	movement()
 	if !inHub:
@@ -77,8 +85,8 @@ func takeDmg() -> void:
 		dead = true
 		die()
 
-func nextLevel():
-	print("advance")
+func nextLevel(path : String) -> void:
+	get_tree().change_scene_to_file(path)
 
 func doRegen() -> void:
 	if regenSpeed.is_stopped():

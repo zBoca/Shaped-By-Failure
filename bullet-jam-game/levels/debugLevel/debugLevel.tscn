@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://6gl8kw0aw43m" path="res://entities/enemies/basicEnemies/basicEnemy2.tscn" id="5_yj0ny"]
 [ext_resource type="PackedScene" uid="uid://d3j34fyghufno" path="res://entities/enemies/basicEnemies/basicEnemy3.tscn" id="6_8pq67"]
 [ext_resource type="PackedScene" uid="uid://lbuj2h0cqc6r" path="res://entities/enemies/basicEnemies/basicEnemy4.tscn" id="7_sad62"]
-[ext_resource type="PackedScene" uid="uid://dis07xojcjg6s" path="res://levels/assets/portal/portal.tscn" id="8_e1pit"]
+[ext_resource type="PackedScene" uid="uid://dis07xojcjg6s" path="res://levels/assets/portal.tscn" id="8_e1pit"]
 
 [node name="Debug Level" type="Node2D"]
 
@@ -32,6 +32,7 @@ tile_set = ExtResource("1_0tjg0")
 
 [node name="portal" parent="." instance=ExtResource("8_e1pit")]
 position = Vector2(128, -13)
+nextLevelPath = "res://levels/hub/hubLevel.tscn"
 
 [node name="Player" parent="." instance=ExtResource("2_84y5r")]
 position = Vector2(-169, 109)

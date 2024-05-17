@@ -27,6 +27,7 @@ func _ready() -> void:
 	fullReset()
 
 func fullReset():
+	print("Stats Reset!")
 	maxHp = DEFAULT_maxHp
 	hp = DEFAULT_maxHp
 	spd = DEFAULT_spd

@@ -14,3 +14,7 @@ func option2Chosen() -> void:
 
 func option3Chosen() -> void:
 	player.chooseNerf(player.option3)
+
+
+func giveUp() -> void:
+	get_tree().change_scene_to_file("res://levels/hub/hubLevel.tscn")

@@ -83,19 +83,16 @@ frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/StaticBody2D"]
 position = Vector2(-21, 7.39999)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pma7a")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AnimatedSprite2D/StaticBody2D"]
 position = Vector2(21.2, 7.2)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pma7a")
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
 position = Vector2(1.90735e-07, 5.8)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_r8jwi")
 
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="." method="bodyEntered"]

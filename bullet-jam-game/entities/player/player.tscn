@@ -1,13 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhtxfoc44c866"]
+[gd_scene load_steps=14 format=3 uid="uid://bhtxfoc44c866"]
 
 [ext_resource type="Script" path="res://entities/player/playerController.gd" id="1_o1fl2"]
 [ext_resource type="Script" path="res://entities/player/aimWeapon.gd" id="2_0jvtv"]
 [ext_resource type="PackedScene" uid="uid://bkbco8j8tbbwl" path="res://ui/deathNerfChooser.tscn" id="3_7w32t"]
 [ext_resource type="Texture2D" uid="uid://h6g1won56c82" path="res://entities/player/sprites/player1.png" id="3_qj4ba"]
+[ext_resource type="Texture2D" uid="uid://cn03j73yv1tef" path="res://entities/player/sprites/theDeviceCannon.png" id="3_res7y"]
 [ext_resource type="Texture2D" uid="uid://bwcoir2f72ji8" path="res://entities/player/sprites/player4.png" id="4_fj24g"]
 [ext_resource type="PackedScene" uid="uid://c4xfx6k5vl64x" path="res://ui/BarUi.tscn" id="4_orrsb"]
 [ext_resource type="Texture2D" uid="uid://0qu0halqa21v" path="res://entities/player/sprites/player3.png" id="5_cayq7"]
 [ext_resource type="Texture2D" uid="uid://rn2bdtnsd76v" path="res://entities/player/sprites/player2.png" id="6_ma7v8"]
+[ext_resource type="Texture2D" uid="uid://kolwfhr6hnb5" path="res://entities/player/sprites/theDevice.png" id="8_nv63i"]
 [ext_resource type="PackedScene" uid="uid://c7jhmpawbftiv" path="res://ui/minimap/minimap.tscn" id="9_lhhii"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18u0x"]
@@ -28,34 +30,34 @@ animations = [{
 "texture": ExtResource("3_qj4ba")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_fj24g")
+"texture": ExtResource("6_ma7v8")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_cayq7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ma7v8")
+"texture": ExtResource("4_fj24g")
 }],
 "loop": true,
 "name": &"rollLeft",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_qj4ba")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ma7v8")
+"texture": ExtResource("4_fj24g")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_cayq7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_fj24g")
+"texture": ExtResource("6_ma7v8")
 }],
 "loop": true,
 "name": &"rollRight",
-"speed": 10.0
+"speed": 7.0
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
@@ -64,21 +66,23 @@ script = ExtResource("1_o1fl2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_18u0x")
 
+[node name="TheDevice" type="Sprite2D" parent="."]
+texture = ExtResource("8_nv63i")
+
 [node name="weaponHold" type="Node2D" parent="."]
 script = ExtResource("2_0jvtv")
-
-[node name="weapon" type="ColorRect" parent="weaponHold"]
-offset_top = -3.0
-offset_right = 29.0
-offset_bottom = 3.0
-color = Color(0.118581, 0.118581, 0.118581, 1)
 
 [node name="Marker2D" type="Marker2D" parent="weaponHold"]
 position = Vector2(26, 0)
 
+[node name="weapon" type="Sprite2D" parent="weaponHold"]
+position = Vector2(24.75, 0)
+scale = Vector2(1.16667, 3)
+texture = ExtResource("3_res7y")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4ixgl")
-animation = &"idle"
+animation = &"rollLeft"
 
 [node name="dashLength" type="Timer" parent="."]
 wait_time = 0.1
