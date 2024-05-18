@@ -8,7 +8,8 @@ extends Node2D
 var currSpawn
 
 func _physics_process(_delta: float) -> void:
-	look_at(get_parent().get_parent().get_parent().get_node("Player").position)
+	
+	look_at(get_tree().get_first_node_in_group("player").position)
 
 func shoot() -> void:
 	timeBetween.start()

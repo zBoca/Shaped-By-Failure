@@ -33,7 +33,7 @@ text = "Debug Level"
 
 [node name="portal2" parent="." instance=ExtResource("3_14gxn")]
 position = Vector2(180, -252)
-nextLevelPath = "res://levels/hub/hubLevel.tscn"
+nextLevelPath = "res://levels/stages/1/1_1.tscn"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="portal2"]
 offset_left = -30.0

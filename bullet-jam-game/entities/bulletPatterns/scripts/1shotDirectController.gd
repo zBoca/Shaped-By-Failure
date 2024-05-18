@@ -5,7 +5,7 @@ extends Node2D
 @onready var nerfTracker = get_node("/root/NerfTracker")
 
 func _physics_process(_delta: float) -> void:
-	look_at(get_parent().get_parent().get_parent().get_node("Player").position)
+	look_at(get_tree().get_first_node_in_group("player").position)
 	
 func shoot():
 	var bullet = bulletScene.instantiate()

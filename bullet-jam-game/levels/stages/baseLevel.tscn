@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmwjnmxv1dtjy"]
+
+[ext_resource type="TileSet" uid="uid://dsu3ukw58r4hj" path="res://levels/assets/tileSet.tres" id="1_skkrm"]
+[ext_resource type="PackedScene" uid="uid://dis07xojcjg6s" path="res://levels/assets/portal.tscn" id="2_1kj3c"]
+[ext_resource type="TileSet" uid="uid://bngje23c7mqqi" path="res://levels/assets/objsTileset.tres" id="2_8hftr"]
+[ext_resource type="PackedScene" uid="uid://bhtxfoc44c866" path="res://entities/player/player.tscn" id="3_ubu0t"]
+[ext_resource type="PackedScene" uid="uid://dwhpg4fmsh0g2" path="res://entities/player/playerCam.tscn" id="4_rm5nt"]
+
+[node name="BaseLevel" type="Node2D"]
+
+[node name="Tilemaps" type="Node2D" parent="."]
+
+[node name="wall4" type="TileMapLayer" parent="Tilemaps"]
+tile_set = ExtResource("1_skkrm")
+
+[node name="wall3" type="TileMapLayer" parent="Tilemaps"]
+tile_set = ExtResource("1_skkrm")
+
+[node name="wall2" type="TileMapLayer" parent="Tilemaps"]
+tile_set = ExtResource("1_skkrm")
+
+[node name="wall1" type="TileMapLayer" parent="Tilemaps"]
+tile_set = ExtResource("1_skkrm")
+
+[node name="floor" type="TileMapLayer" parent="Tilemaps"]
+tile_set = ExtResource("1_skkrm")
+
+[node name="obj" type="TileMapLayer" parent="Tilemaps"]
+tile_set = ExtResource("2_8hftr")
+
+[node name="portal" parent="." instance=ExtResource("2_1kj3c")]
+
+[node name="Player" parent="." instance=ExtResource("3_ubu0t")]
+
+[node name="Player Cam" parent="." instance=ExtResource("4_rm5nt")]
+
+[node name="Enemies" type="Node2D" parent="."]

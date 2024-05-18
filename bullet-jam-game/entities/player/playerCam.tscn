@@ -68,7 +68,7 @@ script = ExtResource("1_ju15u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("2_ndb8q")
-randStr = 5.0
+randStr = 7.0
 shakeFade = 10.0
 
 [node name="Area2D" type="StaticBody2D" parent="Camera2D" groups=["camBorder", "wall"]]

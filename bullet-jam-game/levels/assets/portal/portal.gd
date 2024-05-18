@@ -5,6 +5,7 @@ extends Node2D
 @onready var enemyHolder = get_parent().get_node("Enemies")
 @onready var nerfTracker = get_node("/root/NerfTracker")
 var open : bool = false
+var canEnter : bool = false
 var inPortal : bool = false
 
 func _ready() -> void:
@@ -18,7 +19,7 @@ func checkPortalOpen() -> void:
 func _process(_delta: float) -> void:
 	checkPortalOpen()
 	
-	if open && inPortal:
+	if canEnter && inPortal:
 		if nextLevelPath == "res://levels/hub/hubLevel.tscn":
 			nerfTracker.fullReset()
 		get_parent().get_node("Player").nextLevel(nextLevelPath)
@@ -27,6 +28,7 @@ func openPortal():
 	anim.play("portalOpening")
 	await anim.animation_finished
 	anim.play("portalOpen")
+	canEnter = true
 
 
 func bodyEntered(body: Node2D) -> void:
