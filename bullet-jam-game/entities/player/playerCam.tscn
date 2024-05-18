@@ -72,6 +72,7 @@ randStr = 7.0
 shakeFade = 10.0
 
 [node name="Area2D" type="StaticBody2D" parent="Camera2D" groups=["camBorder", "wall"]]
+scale = Vector2(1.05, 1.05)
 
 [node name="borderL" type="CollisionShape2D" parent="Camera2D/Area2D"]
 position = Vector2(-592, 0)

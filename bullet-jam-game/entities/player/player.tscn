@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bhtxfoc44c866"]
+[gd_scene load_steps=33 format=3 uid="uid://bhtxfoc44c866"]
 
 [ext_resource type="Script" path="res://entities/player/playerController.gd" id="1_o1fl2"]
 [ext_resource type="Script" path="res://entities/player/aimWeapon.gd" id="2_0jvtv"]
@@ -10,7 +10,23 @@
 [ext_resource type="Texture2D" uid="uid://0qu0halqa21v" path="res://entities/player/sprites/player3.png" id="5_cayq7"]
 [ext_resource type="Texture2D" uid="uid://rn2bdtnsd76v" path="res://entities/player/sprites/player2.png" id="6_ma7v8"]
 [ext_resource type="Texture2D" uid="uid://kolwfhr6hnb5" path="res://entities/player/sprites/theDevice.png" id="8_nv63i"]
+[ext_resource type="Texture2D" uid="uid://dlpysy347lcg7" path="res://entities/player/sprites/player6.png" id="9_bumx8"]
 [ext_resource type="PackedScene" uid="uid://c7jhmpawbftiv" path="res://ui/minimap/minimap.tscn" id="9_lhhii"]
+[ext_resource type="Texture2D" uid="uid://4enue5ovlw8s" path="res://entities/player/sprites/player7.png" id="10_trm6o"]
+[ext_resource type="Texture2D" uid="uid://dk8flg4w4525v" path="res://entities/player/sprites/player8.png" id="11_o6wp8"]
+[ext_resource type="Texture2D" uid="uid://kfxs6crs4cdw" path="res://entities/player/sprites/player9.png" id="12_6adn7"]
+[ext_resource type="Texture2D" uid="uid://ddda5blrvi048" path="res://entities/player/sprites/player10.png" id="13_un4o5"]
+[ext_resource type="Texture2D" uid="uid://upddlkqialgi" path="res://entities/player/sprites/player11.png" id="14_wqewu"]
+[ext_resource type="Texture2D" uid="uid://5y5it2hi8fvs" path="res://entities/player/sprites/player12.png" id="15_1mbg2"]
+[ext_resource type="Texture2D" uid="uid://dk1lgvd4wf84e" path="res://entities/player/sprites/player13.png" id="16_cmot7"]
+[ext_resource type="Texture2D" uid="uid://cfwcg24yoanqc" path="res://entities/player/sprites/player14.png" id="17_mto0t"]
+[ext_resource type="Texture2D" uid="uid://3tt3maw6i72a" path="res://entities/player/sprites/player15.png" id="18_mt6t5"]
+[ext_resource type="Texture2D" uid="uid://cj54c58g4t7n" path="res://entities/player/sprites/player16.png" id="19_jrv4u"]
+[ext_resource type="Texture2D" uid="uid://c16oe1axsww7l" path="res://entities/player/sprites/player17.png" id="20_o11u4"]
+[ext_resource type="Texture2D" uid="uid://dao58ajuouctc" path="res://entities/player/sprites/player18.png" id="21_leowi"]
+[ext_resource type="Texture2D" uid="uid://bk00dv8c4dfcw" path="res://entities/player/sprites/player19.png" id="22_g52ed"]
+[ext_resource type="Texture2D" uid="uid://dgemc3jcxyuj2" path="res://entities/player/sprites/player20.png" id="23_6j5i4"]
+[ext_resource type="Texture2D" uid="uid://dfdo7g1xtapgh" path="res://entities/player/sprites/player21.png" id="24_b1ol6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18u0x"]
 size = Vector2(22, 22)
@@ -30,13 +46,13 @@ animations = [{
 "texture": ExtResource("3_qj4ba")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ma7v8")
+"texture": ExtResource("4_fj24g")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_cayq7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_fj24g")
+"texture": ExtResource("6_ma7v8")
 }],
 "loop": true,
 "name": &"rollLeft",
@@ -47,18 +63,246 @@ animations = [{
 "texture": ExtResource("3_qj4ba")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_fj24g")
+"texture": ExtResource("6_ma7v8")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_cayq7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ma7v8")
+"texture": ExtResource("4_fj24g")
 }],
 "loop": true,
 "name": &"rollRight",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_bumx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_trm6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_o6wp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6adn7")
+}, {
+"duration": 4.0,
+"texture": ExtResource("13_un4o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wqewu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1mbg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_cmot7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mto0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mt6t5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jrv4u")
+}, {
+"duration": 4.0,
+"texture": ExtResource("20_o11u4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_leowi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_g52ed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_6j5i4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_b1ol6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qj4ba")
+}],
+"loop": false,
+"name": &"tpIn",
+"speed": 15.0
 }]
+
+[sub_resource type="Animation" id="Animation_qbx4v"]
+resource_name = "tpIn"
+length = 2.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07, 0.14, 0.21, 0.28, 0.45, 0.52, 0.59, 0.66, 0.73, 0.8, 0.87, 1.05, 1.12, 1.19, 1.26, 1.33),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TheDevice:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.33, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(0.1, 0.1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("weaponHold:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.33, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(0.1, 0.1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("weaponHold:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TheDevice:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimatedSprite2D:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"tpIn", &"idle"]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"allowMove"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_flc2k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TheDevice:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1, 0.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("weaponHold:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1, 0.1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("weaponHold:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TheDevice:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimatedSprite2D:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"tpIn"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ypnj1"]
+_data = {
+"RESET": SubResource("Animation_flc2k"),
+"tpIn": SubResource("Animation_qbx4v")
+}
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_o1fl2")
@@ -67,9 +311,13 @@ script = ExtResource("1_o1fl2")
 shape = SubResource("RectangleShape2D_18u0x")
 
 [node name="TheDevice" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("8_nv63i")
 
 [node name="weaponHold" type="Node2D" parent="."]
+visible = false
+scale = Vector2(0.1, 0.1)
 script = ExtResource("2_0jvtv")
 
 [node name="Marker2D" type="Marker2D" parent="weaponHold"]
@@ -82,7 +330,7 @@ texture = ExtResource("3_res7y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4ixgl")
-animation = &"rollLeft"
+animation = &"tpIn"
 
 [node name="dashLength" type="Timer" parent="."]
 wait_time = 0.1
@@ -111,5 +359,11 @@ one_shot = true
 [node name="Death Nerf Chooser" parent="CanvasLayer" instance=ExtResource("3_7w32t")]
 visible = false
 size_flags_horizontal = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ypnj1")
+}
+autoplay = "tpIn"
 
 [connection signal="timeout" from="regenTimer" to="." method="_on_regen_timer_timeout"]

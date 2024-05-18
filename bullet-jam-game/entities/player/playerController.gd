@@ -16,21 +16,25 @@ func _physics_process(_delta: float) -> void:
 		if !hurtRecently and !dead and nerfTracker.hp < nerfTracker.maxHp:
 			doRegen()
 
-var canMove := true
-var canDash := true
+var canMove := false
+var canDash := false
 var dead := false
 var hasIFrames := false
 var hurtRecently := false
 var inHub := false
 
 @onready var nerfTracker = get_node("/root/NerfTracker")
-var dir
+var dir = Vector2(0, 0)
 @onready var dashTimer = $dashLength
 @onready var dashCooldown = $dashCooldown
 @onready var regenTimer = $regenTimer
 @onready var regenSpeed = $regenSpeed
 @onready var sprite = $AnimatedSprite2D
 @onready var cam = get_parent().get_node("Player Cam/Camera2D")
+func allowMove():
+	canMove = true
+	canDash = true
+
 func movement():
 	if canMove:
 		dir = Input.get_vector("left", "right", "up", "down")
@@ -48,7 +52,7 @@ func movement():
 		sprite.play("rollRight")
 	elif dir.y < 0:
 		sprite.play("rollLeft")
-	else:
+	elif canMove:
 		sprite.play("idle")
 	
 	move_and_slide()
