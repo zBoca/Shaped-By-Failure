@@ -9,7 +9,7 @@ func _physics_process(_delta: float) -> void:
 	
 func shoot():
 	var bullet = bulletScene.instantiate()
-	get_parent().get_parent().add_child(bullet)
+	get_parent().get_parent().get_parent().add_child(bullet)
 	bullet.rotation = rotation
 	bullet.global_position = global_position
 	bullet.scale = Vector2(nerfTracker.enemyBulletSize, nerfTracker.enemyBulletSize)

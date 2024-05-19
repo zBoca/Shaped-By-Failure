@@ -23,7 +23,7 @@ func shoot() -> void:
 	
 	var i = 1
 	
-	while i < 20:
+	while i < 60:
 		spawnBullet(top)
 		spawnBullet(topLeft)
 		spawnBullet(topRight)
@@ -40,7 +40,7 @@ func shoot() -> void:
 
 func spawnBullet(spawnPoint):
 	var bullet = bulletScene.instantiate()
-	get_parent().get_parent().add_child(bullet)
+	get_parent().get_parent().get_parent().add_child(bullet)
 	bullet.rotation = spawnPoint.global_rotation
 	bullet.global_position = spawnPoint.global_position
 	bullet.scale = Vector2(nerfTracker.enemyBulletSize, nerfTracker.enemyBulletSize)

@@ -7,6 +7,9 @@ func _ready() -> void:
 		inHub = true
 		barUi.hide()
 		minimapUi.hide()
+	elif get_parent().name == "1_Boss" or get_parent().name == "2_Boss" or get_parent().name == "3_Boss":
+		get_parent().get_node("Player Cam/Camera2D/Area2D").queue_free()
+		get_parent().get_node("Player Cam/Camera2D").zoom = Vector2(0.55, 0.55)
 
 func _physics_process(_delta: float) -> void:
 	movement()

@@ -6,7 +6,7 @@
 script = ExtResource("1_ag638")
 
 [node name="timeBetween" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.1
 
 [node name="rotator" type="Node2D" parent="."]
 

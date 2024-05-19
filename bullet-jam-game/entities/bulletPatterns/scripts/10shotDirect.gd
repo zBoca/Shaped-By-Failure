@@ -16,7 +16,7 @@ func shoot() -> void:
 	await timeBetween.timeout
 	
 	var i = 0
-	while i < 5:
+	while i < 10:
 		currSpawn = get_node("spawn" + str(randi_range(1, 3)))
 		
 		var bullet = bulletScene.instantiate()
@@ -28,7 +28,6 @@ func shoot() -> void:
 		
 		timeBetween.start()
 		await timeBetween.timeout
-		
 		i += 1
 	
 	timeBetween.start()

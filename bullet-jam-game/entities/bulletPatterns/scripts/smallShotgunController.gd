@@ -28,7 +28,7 @@ func shoot() -> void:
 
 func spawnBullet(spawn):
 	var bullet = bulletScene.instantiate()
-	get_parent().get_parent().add_child(bullet)
+	get_parent().get_parent().get_parent().add_child(bullet)
 	bullet.rotation = spawn.global_rotation
 	bullet.global_position = spawn.global_position
 	bullet.scale = Vector2(nerfTracker.enemyBulletSize, nerfTracker.enemyBulletSize)
