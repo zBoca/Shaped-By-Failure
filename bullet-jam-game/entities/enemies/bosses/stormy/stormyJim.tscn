@@ -1,0 +1,199 @@
+[gd_scene load_steps=16 format=3 uid="uid://cyiiwt82o86pa"]
+
+[ext_resource type="Script" path="res://entities/enemies/bosses/stormy/stormController.gd" id="1_xj6im"]
+[ext_resource type="Texture2D" uid="uid://vgdrxx8qy2a4" path="res://entities/enemies/bosses/assets/storm.png" id="2_4gta4"]
+[ext_resource type="Texture2D" uid="uid://ckjdrv5gl83be" path="res://entities/enemies/bosses/assets/stormHurt.png" id="3_ryfdb"]
+[ext_resource type="PackedScene" uid="uid://d4n3xqs2hxhs1" path="res://entities/bulletPatterns/boss/stormSpiral.tscn" id="4_2p17f"]
+[ext_resource type="PackedScene" uid="uid://bibv3md0amikx" path="res://entities/bulletPatterns/boss/storm10shotDirect.tscn" id="5_qm12t"]
+[ext_resource type="Texture2D" uid="uid://brol602egmeou" path="res://entities/explosion/explosion1.png" id="6_jpbcn"]
+[ext_resource type="Texture2D" uid="uid://dyy7sy4nddl8s" path="res://entities/explosion/explosion2.png" id="7_q7jxo"]
+[ext_resource type="Texture2D" uid="uid://bq5owhqeyqc0w" path="res://entities/explosion/explosion3.png" id="8_04rv6"]
+[ext_resource type="Texture2D" uid="uid://cs7p63oahbhfj" path="res://entities/explosion/explosion4.png" id="9_85ab7"]
+[ext_resource type="Texture2D" uid="uid://d3oky5vt7xr0n" path="res://entities/explosion/explosion5.png" id="10_guq73"]
+[ext_resource type="Texture2D" uid="uid://cfi6l364cor1i" path="res://entities/explosion/explosion6.png" id="11_hgt8a"]
+[ext_resource type="AudioStream" uid="uid://d3opi5pesypt6" path="res://sfx/explosionSfx.wav" id="12_pf5ch"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6mt5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4gta4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ryfdb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1y8j"]
+size = Vector2(320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0aelq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jpbcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q7jxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_04rv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_85ab7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_guq73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hgt8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_guq73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_85ab7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_04rv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q7jxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jpbcn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="bossStorm" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_xj6im")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 10
+sprite_frames = SubResource("SpriteFrames_g6mt5")
+
+[node name="dmgFlash" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="atkCooldown" type="Timer" parent="."]
+
+[node name="Spiral" parent="." instance=ExtResource("4_2p17f")]
+
+[node name="10ShotDirect" parent="." instance=ExtResource("5_qm12t")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 74)
+shape = SubResource("RectangleShape2D_g1y8j")
+
+[node name="explosions" type="Node2D" parent="."]
+
+[node name="explosionAnimation" type="AnimatedSprite2D" parent="explosions"]
+z_index = 11
+position = Vector2(-1, 1)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0aelq")
+frame = 10
+frame_progress = 1.0
+
+[node name="explosionTimer" type="Timer" parent="explosions/explosionAnimation"]
+wait_time = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="explosions/explosionAnimation"]
+stream = ExtResource("12_pf5ch")
+volume_db = 5.0
+
+[node name="explosionAnimation2" type="AnimatedSprite2D" parent="explosions"]
+z_index = 11
+position = Vector2(-102, 159)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0aelq")
+frame = 10
+frame_progress = 1.0
+
+[node name="explosionTimer" type="Timer" parent="explosions/explosionAnimation2"]
+wait_time = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="explosions/explosionAnimation2"]
+stream = ExtResource("12_pf5ch")
+volume_db = 5.0
+
+[node name="explosionAnimation3" type="AnimatedSprite2D" parent="explosions"]
+z_index = 11
+position = Vector2(109, -83)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0aelq")
+frame = 10
+frame_progress = 1.0
+
+[node name="explosionTimer" type="Timer" parent="explosions/explosionAnimation3"]
+wait_time = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="explosions/explosionAnimation3"]
+stream = ExtResource("12_pf5ch")
+volume_db = 5.0
+
+[node name="explosionAnimation4" type="AnimatedSprite2D" parent="explosions"]
+z_index = 11
+position = Vector2(107, 117)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0aelq")
+frame = 10
+frame_progress = 1.0
+
+[node name="explosionTimer" type="Timer" parent="explosions/explosionAnimation4"]
+wait_time = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="explosions/explosionAnimation4"]
+stream = ExtResource("12_pf5ch")
+volume_db = 5.0
+
+[node name="explosionAnimation5" type="AnimatedSprite2D" parent="explosions"]
+z_index = 11
+position = Vector2(-93, -62)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0aelq")
+frame = 10
+frame_progress = 1.0
+
+[node name="explosionTimer" type="Timer" parent="explosions/explosionAnimation5"]
+wait_time = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="explosions/explosionAnimation5"]
+stream = ExtResource("12_pf5ch")
+volume_db = 5.0
+
+[node name="explosionAnimation6" type="AnimatedSprite2D" parent="explosions"]
+z_index = 11
+position = Vector2(5, 164)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0aelq")
+frame = 10
+frame_progress = 1.0
+
+[node name="explosionTimer" type="Timer" parent="explosions/explosionAnimation6"]
+wait_time = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="explosions/explosionAnimation6"]
+stream = ExtResource("12_pf5ch")
+volume_db = 5.0
+
+[node name="explosionAnimation7" type="AnimatedSprite2D" parent="explosions"]
+z_index = 11
+position = Vector2(-1, 74)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_0aelq")
+frame = 10
+frame_progress = 1.0
+
+[node name="explosionTimer" type="Timer" parent="explosions/explosionAnimation7"]
+wait_time = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="explosions/explosionAnimation7"]
+stream = ExtResource("12_pf5ch")
+volume_db = 5.0

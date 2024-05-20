@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://nxdpcv0wgjib"]
+
+[ext_resource type="Script" path="res://entities/bulletPatterns/scripts/frenchBread.gd" id="1_s4b8c"]
+
+[node name="sportBall" type="Node2D"]
+script = ExtResource("1_s4b8c")
+
+[node name="aimTime" type="Timer" parent="."]
+
+[node name="timeBetween" type="Timer" parent="."]
+wait_time = 0.8

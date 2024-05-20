@@ -1,0 +1,394 @@
+[gd_scene load_steps=17 format=3 uid="uid://ce4lh47x2xm8d"]
+
+[ext_resource type="FontFile" uid="uid://buj3wt7dy82im" path="res://font.ttf" id="1_03oa2"]
+[ext_resource type="Script" path="res://menus/levelSelect/levelChooser.gd" id="1_ox7p0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qnuby"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_spofm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7p23p"]
+bg_color = Color(0.116312, 0.204919, 0.296484, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0366029, 0.0845364, 0.134077, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.014883, 0.0409832, 0.075108, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_im1fq"]
+bg_color = Color(0.116312, 0.204919, 0.296484, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0131195, 0.0361432, 0.0684602, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4m2sv"]
+bg_color = Color(0.168627, 0.282353, 0.4, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0696174, 0.134658, 0.201831, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.03919, 0.0885509, 0.139509, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="Animation" id="Animation_hdypc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_877ha"]
+resource_name = "fadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_c2ywo"]
+resource_name = "fadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q8k47"]
+_data = {
+"RESET": SubResource("Animation_hdypc"),
+"fadeIn": SubResource("Animation_877ha"),
+"fadeOut": SubResource("Animation_c2ywo")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85l1j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8g63t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eshtj"]
+bg_color = Color(0.116312, 0.204919, 0.296484, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0366029, 0.0845364, 0.134077, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.014883, 0.0409832, 0.075108, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmdd3"]
+bg_color = Color(0.116312, 0.204919, 0.296484, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0131195, 0.0361432, 0.0684602, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncwf8"]
+bg_color = Color(0.168627, 0.282353, 0.4, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0696174, 0.134658, 0.201831, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.03919, 0.0885509, 0.139509, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[node name="LevelSect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ox7p0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_top = 32.0
+offset_right = 576.0
+offset_bottom = 281.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/normal_font = ExtResource("1_03oa2")
+theme_override_font_sizes/normal_font_size = 120
+bbcode_enabled = true
+text = "[center]Levels[/center]"
+
+[node name="playButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -103.0
+offset_right = -200.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_03oa2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qnuby")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_spofm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7p23p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_im1fq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4m2sv")
+text = "1"
+
+[node name="playButton2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -103.0
+offset_right = 100.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_03oa2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qnuby")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_spofm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7p23p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_im1fq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4m2sv")
+text = "2
+"
+
+[node name="playButton3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 200.0
+offset_top = -103.0
+offset_right = 400.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_03oa2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qnuby")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_spofm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7p23p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_im1fq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4m2sv")
+text = "3"
+
+[node name="playButton4" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = 97.0
+offset_right = -200.0
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_03oa2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qnuby")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_spofm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7p23p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_im1fq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4m2sv")
+text = "4"
+
+[node name="playButton5" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 97.0
+offset_right = 100.0
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_03oa2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qnuby")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_spofm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7p23p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_im1fq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4m2sv")
+text = "5"
+
+[node name="fadeAnimator" type="AnimationPlayer" parent="."]
+root_node = NodePath("ColorRect")
+libraries = {
+"": SubResource("AnimationLibrary_q8k47")
+}
+
+[node name="ColorRect" type="ColorRect" parent="fadeAnimator"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="fadeOutTimer" type="Timer" parent="fadeAnimator"]
+wait_time = 0.7
+one_shot = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 691.0
+offset_top = 444.0
+offset_right = 1158.0
+offset_bottom = 616.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/normal_font = ExtResource("1_03oa2")
+theme_override_font_sizes/normal_font_size = 32
+text = "Credits:
+Jacob - Programming, Art
+Jp - Music, Playtesting
+Cameron - Music, Playtesting"
+
+[node name="playButton6" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -82.0
+offset_right = 139.0
+offset_bottom = -10.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_03oa2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_85l1j")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8g63t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eshtj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wmdd3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ncwf8")
+text = "Back
+"
+
+[connection signal="button_down" from="playButton" to="." method="level1"]
+[connection signal="button_down" from="playButton2" to="." method="level2"]
+[connection signal="button_down" from="playButton3" to="." method="level3"]
+[connection signal="button_down" from="playButton4" to="." method="level4"]
+[connection signal="button_down" from="playButton5" to="." method="level5"]
+[connection signal="button_down" from="playButton6" to="." method="backPressed"]

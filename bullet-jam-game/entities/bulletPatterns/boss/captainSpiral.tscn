@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4n3xqs2hxhs1"]
+[gd_scene load_steps=2 format=3 uid="uid://liyeo1ndd7sh"]
 
-[ext_resource type="Script" path="res://entities/bulletPatterns/scripts/spiralController.gd" id="1_ag638"]
+[ext_resource type="Script" path="res://entities/bulletPatterns/scripts/jimSpiral.gd" id="1_iao0e"]
 
 [node name="Spiral" type="Node2D"]
-script = ExtResource("1_ag638")
+script = ExtResource("1_iao0e")
 
 [node name="timeBetween" type="Timer" parent="."]
 wait_time = 0.1

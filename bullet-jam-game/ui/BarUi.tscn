@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4xfx6k5vl64x"]
+[gd_scene load_steps=8 format=3 uid="uid://c4xfx6k5vl64x"]
 
 [ext_resource type="Script" path="res://ui/BarControl.gd" id="1_kt0oe"]
 [ext_resource type="Texture2D" uid="uid://csppbhssy1fxc" path="res://entities/player/bars/hpBarEmpty.png" id="2_1bdi7"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cs86utm3fhc8" path="res://entities/player/bars/hpBarLowerMax.png" id="4_r8ktx"]
 [ext_resource type="Texture2D" uid="uid://cpr4ljkcnt3xy" path="res://entities/player/bars/dashbarEmpty.png" id="5_7afuc"]
 [ext_resource type="Texture2D" uid="uid://dxkalu60ndiyn" path="res://entities/player/bars/dashbarFull.png" id="6_2lxa6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2dsg"]
+bg_color = Color(0.577008, 0.577008, 0.577008, 1)
+corner_radius_bottom_right = 20
 
 [node name="Bar UI" type="Control"]
 layout_mode = 3
@@ -16,6 +20,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_kt0oe")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 186.0
+offset_bottom = 130.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w2dsg")
 
 [node name="hpBar" type="TextureProgressBar" parent="."]
 layout_mode = 0

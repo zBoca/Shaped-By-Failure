@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://e5f5tijpw3b2"]
+[gd_scene load_steps=8 format=4 uid="uid://e5f5tijpw3b2"]
 
 [ext_resource type="TileSet" uid="uid://dsu3ukw58r4hj" path="res://levels/assets/tileSet.tres" id="1_cwxxb"]
 [ext_resource type="PackedScene" uid="uid://bhtxfoc44c866" path="res://entities/player/player.tscn" id="1_q6r2y"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://bngje23c7mqqi" path="res://levels/assets/objsTileset.tres" id="2_spy2r"]
 [ext_resource type="PackedScene" uid="uid://dis07xojcjg6s" path="res://levels/assets/portal.tscn" id="4_h8cmu"]
 [ext_resource type="PackedScene" uid="uid://cdcpi0ixssbtn" path="res://entities/enemies/basicEnemies/basicEnemy1.tscn" id="5_nr1wn"]
+[ext_resource type="PackedScene" uid="uid://dcr8gch3m5rw2" path="res://levels/stages/textbox.tscn" id="7_nesn3"]
 
 [node name="1_1" type="Node2D"]
 
@@ -48,3 +49,9 @@ position = Vector2(-111, 15)
 
 [node name="BasicEnemy1" parent="Enemies" instance=ExtResource("5_nr1wn")]
 position = Vector2(322, -1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Textbox" parent="CanvasLayer" instance=ExtResource("7_nesn3")]
+z_index = 100
+levelNum = 1

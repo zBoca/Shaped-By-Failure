@@ -27,7 +27,7 @@ tile_map_data = PackedByteArray("AAALAO3/AAAAAAEAAAD7/+b/AAAAAAAAAAA=")
 
 [node name="portal" parent="." index="1"]
 position = Vector2(-4, -678)
-nextLevelPath = "res://levels/stages/1/1_Boss.tscn"
+nextLevelPath = "res://levels/stages/1/1_boss.tscn"
 
 [node name="Player" parent="." index="2"]
 position = Vector2(0, 104)

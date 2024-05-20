@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://cppapjgdrnl12"]
+
+[ext_resource type="Script" path="res://entities/bulletPatterns/scripts/frenchSpiral.gd" id="1_m0iyc"]
+
+[node name="Spiral" type="Node2D"]
+script = ExtResource("1_m0iyc")
+
+[node name="timeBetween" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="rotator" type="Node2D" parent="."]
+
+[node name="t" type="Marker2D" parent="rotator"]
+position = Vector2(0, -1)
+rotation = -1.5708
+
+[node name="tr" type="Marker2D" parent="rotator"]
+position = Vector2(1, -1)
+rotation = -0.785398
+
+[node name="r" type="Marker2D" parent="rotator"]
+position = Vector2(1, 0)
+
+[node name="dr" type="Marker2D" parent="rotator"]
+position = Vector2(1, 1)
+rotation = 0.785398
+
+[node name="d" type="Marker2D" parent="rotator"]
+position = Vector2(0, 1)
+rotation = 1.5708
+
+[node name="dl" type="Marker2D" parent="rotator"]
+position = Vector2(-1, 1)
+rotation = 2.35619
+
+[node name="l" type="Marker2D" parent="rotator"]
+position = Vector2(-1, 0)
+rotation = -3.14159
+
+[node name="tl" type="Marker2D" parent="rotator"]
+position = Vector2(-1, -1)
+rotation = -2.35619

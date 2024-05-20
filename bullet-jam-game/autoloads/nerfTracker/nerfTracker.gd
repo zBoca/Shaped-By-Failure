@@ -1,10 +1,10 @@
 extends Node
 
 const DEFAULT_maxHp = 10.0
-const DEFAULT_spd = 200.0
-const DEFAULT_dashCooldown = 1.0
+const DEFAULT_spd = 300.0
+const DEFAULT_dashCooldown = .5
 const DEFAULT_dashDistance = 0.2
-const DEFAULT_fireRate = 0.5
+const DEFAULT_fireRate = .4
 const DEFAULT_regen = .5
 const DEFAULT_enemyHpMulti = 1.0
 const DEFAULT_enemyShootMulti = 1.0

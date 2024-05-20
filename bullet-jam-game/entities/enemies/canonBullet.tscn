@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmmir5n3kdd7w"]
+
+[ext_resource type="Script" path="res://entities/enemies/canonBulletController.gd" id="1_7ntup"]
+[ext_resource type="Texture2D" uid="uid://bjfdr8l7x7h74" path="res://entities/enemies/enemyBullets/canonBullet1.png" id="2_q10cc"]
+[ext_resource type="Texture2D" uid="uid://chorwv4erc6ew" path="res://entities/enemies/enemyBullets/canonBullet2.png" id="3_hsa6h"]
+[ext_resource type="Texture2D" uid="uid://cxpdrg5lhfp31" path="res://entities/enemies/enemyBullets/canonBullet3.png" id="4_h7ris"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpyjx"]
+size = Vector2(48, 49)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_60l4g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q10cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hsa6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h7ris")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CanonBullet" type="Area2D" groups=["bullet"]]
+script = ExtResource("1_7ntup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_mpyjx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_60l4g")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="onHit"]

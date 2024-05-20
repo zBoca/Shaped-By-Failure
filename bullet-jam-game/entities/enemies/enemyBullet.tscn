@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b1f0r58bo10q5"]
 
-[ext_resource type="Script" path="res://entities/enemies/enemyBullet.gd" id="1_ghj2t"]
+[ext_resource type="Script" path="res://entities/enemies/enemyBulletController.gd" id="1_ghj2t"]
 [ext_resource type="Texture2D" uid="uid://cmbfviokbjxj" path="res://entities/enemies/enemyBullets/enemyBullet1.png" id="2_f4fs6"]
 [ext_resource type="Texture2D" uid="uid://dtagykdbichie" path="res://entities/enemies/enemyBullets/enemyBullet2.png" id="3_s7cqi"]
 [ext_resource type="Texture2D" uid="uid://dbb7bk48ssu3v" path="res://entities/enemies/enemyBullets/enemyBullet3.png" id="4_gcnv2"]

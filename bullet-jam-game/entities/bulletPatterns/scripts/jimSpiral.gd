@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @onready var bulletScene = preload("res://entities/enemies/enemyBullet.tscn")
 @onready var nerfTracker = get_node("/root/NerfTracker")
 @onready var timeBetween = $timeBetween
@@ -23,7 +22,7 @@ func shoot() -> void:
 	
 	var i = 1
 	
-	while i < 60:
+	while i < 70:
 		spawnBullet(top)
 		spawnBullet(topLeft)
 		spawnBullet(topRight)

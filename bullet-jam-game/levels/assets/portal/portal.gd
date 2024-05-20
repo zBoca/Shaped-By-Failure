@@ -22,6 +22,7 @@ func _process(_delta: float) -> void:
 	if canEnter && inPortal:
 		if nextLevelPath == "res://levels/hub/hubLevel.tscn":
 			nerfTracker.fullReset()
+		
 		get_parent().get_node("Player").nextLevel(nextLevelPath)
 
 func openPortal():

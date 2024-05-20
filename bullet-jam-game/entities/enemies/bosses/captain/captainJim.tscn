@@ -1,0 +1,171 @@
+[gd_scene load_steps=15 format=3 uid="uid://b7rd0p6j8pncp"]
+
+[ext_resource type="Script" path="res://entities/enemies/bosses/captain/captainController.gd" id="1_njgxs"]
+[ext_resource type="Texture2D" uid="uid://cns81pgwfxgvs" path="res://entities/enemies/bosses/assets/jim.png" id="2_vxv1u"]
+[ext_resource type="Texture2D" uid="uid://bafp1lin0nqes" path="res://entities/enemies/bosses/assets/jimHurt.png" id="3_o8roe"]
+[ext_resource type="PackedScene" uid="uid://liyeo1ndd7sh" path="res://entities/bulletPatterns/boss/captainSpiral.tscn" id="4_t75ap"]
+[ext_resource type="PackedScene" uid="uid://diqfk4cai6abf" path="res://entities/bulletPatterns/boss/captainCanon.tscn" id="5_36d2r"]
+[ext_resource type="Texture2D" uid="uid://brol602egmeou" path="res://entities/explosion/explosion1.png" id="6_5esuc"]
+[ext_resource type="Texture2D" uid="uid://dyy7sy4nddl8s" path="res://entities/explosion/explosion2.png" id="7_dmmm4"]
+[ext_resource type="Texture2D" uid="uid://bq5owhqeyqc0w" path="res://entities/explosion/explosion3.png" id="8_f7dpx"]
+[ext_resource type="Texture2D" uid="uid://cs7p63oahbhfj" path="res://entities/explosion/explosion4.png" id="9_lrqod"]
+[ext_resource type="Texture2D" uid="uid://d3oky5vt7xr0n" path="res://entities/explosion/explosion5.png" id="10_q27v6"]
+[ext_resource type="Texture2D" uid="uid://cfi6l364cor1i" path="res://entities/explosion/explosion6.png" id="11_hsjdo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6mt5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vxv1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o8roe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1y8j"]
+size = Vector2(320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0aelq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5esuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dmmm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f7dpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lrqod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_q27v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hsjdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_q27v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lrqod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f7dpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dmmm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5esuc")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="bossJim" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_njgxs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 10
+sprite_frames = SubResource("SpriteFrames_g6mt5")
+
+[node name="dmgFlash" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="atkCooldown" type="Timer" parent="."]
+wait_time = 0.8
+
+[node name="Spiral" parent="." instance=ExtResource("4_t75ap")]
+
+[node name="JimCanon" parent="." instance=ExtResource("5_36d2r")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g1y8j")
+
+[node name="explosions" type="Node2D" parent="."]
+position = Vector2(-3, -74)
+
+[node name="explosionAnimation" type="AnimatedSprite2D" parent="explosions"]
+z_index = 11
+position = Vector2(-1, 1)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0aelq")
+frame = 10
+frame_progress = 1.0
+
+[node name="explosionTimer" type="Timer" parent="explosions/explosionAnimation"]
+wait_time = 0.5
+
+[node name="explosionAnimation2" type="AnimatedSprite2D" parent="explosions"]
+z_index = 11
+position = Vector2(-102, 159)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0aelq")
+frame = 10
+frame_progress = 1.0
+
+[node name="explosionTimer" type="Timer" parent="explosions/explosionAnimation2"]
+wait_time = 0.5
+
+[node name="explosionAnimation3" type="AnimatedSprite2D" parent="explosions"]
+z_index = 11
+position = Vector2(109, -21)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0aelq")
+frame = 10
+frame_progress = 1.0
+
+[node name="explosionTimer" type="Timer" parent="explosions/explosionAnimation3"]
+wait_time = 0.5
+
+[node name="explosionAnimation4" type="AnimatedSprite2D" parent="explosions"]
+z_index = 11
+position = Vector2(107, 117)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0aelq")
+frame = 10
+frame_progress = 1.0
+
+[node name="explosionTimer" type="Timer" parent="explosions/explosionAnimation4"]
+wait_time = 0.5
+
+[node name="explosionAnimation5" type="AnimatedSprite2D" parent="explosions"]
+z_index = 11
+position = Vector2(-93, -62)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0aelq")
+frame = 10
+frame_progress = 1.0
+
+[node name="explosionTimer" type="Timer" parent="explosions/explosionAnimation5"]
+wait_time = 0.5
+
+[node name="explosionAnimation6" type="AnimatedSprite2D" parent="explosions"]
+z_index = 11
+position = Vector2(5, 164)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0aelq")
+frame = 10
+frame_progress = 1.0
+
+[node name="explosionTimer" type="Timer" parent="explosions/explosionAnimation6"]
+wait_time = 0.5
+
+[node name="explosionAnimation7" type="AnimatedSprite2D" parent="explosions"]
+z_index = 11
+position = Vector2(-1, 74)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_0aelq")
+frame = 10
+frame_progress = 1.0
+
+[node name="explosionTimer" type="Timer" parent="explosions/explosionAnimation7"]
+wait_time = 0.5

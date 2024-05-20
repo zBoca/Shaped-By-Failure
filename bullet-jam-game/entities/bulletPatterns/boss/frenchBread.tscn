@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7i06g2peo5br"]
+
+[ext_resource type="Script" path="res://entities/bulletPatterns/scripts/frenchBread.gd" id="1_nq4uc"]
+[ext_resource type="Texture2D" uid="uid://dxfc25y8g52yv" path="res://entities/enemies/enemyBullets/aimLaser.png" id="2_yhena"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6e035"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yhena")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="frenchBread" type="Node2D"]
+script = ExtResource("1_nq4uc")
+
+[node name="aimTime" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="timeBetween" type="Timer" parent="."]
+wait_time = 0.8
+
+[node name="laser" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(2505, 0)
+scale = Vector2(5, 1)
+sprite_frames = SubResource("SpriteFrames_6e035")
+autoplay = "default"
+frame_progress = 0.333527

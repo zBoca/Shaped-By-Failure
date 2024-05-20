@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkbco8j8tbbwl"]
+[gd_scene load_steps=29 format=3 uid="uid://bkbco8j8tbbwl"]
 
-[ext_resource type="Texture2D" uid="uid://82sxud1wiqmb" path="res://icon.svg" id="1_m1s7i"]
 [ext_resource type="Script" path="res://ui/deathNerfController.gd" id="1_qmcym"]
 [ext_resource type="FontFile" uid="uid://buj3wt7dy82im" path="res://font.ttf" id="2_rubww"]
+[ext_resource type="Texture2D" uid="uid://cstofhn5xw0y3" path="res://ui/nerfAssets/nerfIcons1.png" id="3_v3msi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4x0ve"]
 bg_color = Color(0.333333, 0.333333, 0.333333, 0.717647)
@@ -10,6 +10,292 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dwvw1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ngm6n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffixh"]
+bg_color = Color(0.116312, 0.204919, 0.296484, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0366029, 0.0845364, 0.134077, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.014883, 0.0409832, 0.075108, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5n44a"]
+bg_color = Color(0.116312, 0.204919, 0.296484, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0131195, 0.0361432, 0.0684602, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbkhe"]
+bg_color = Color(0.168627, 0.282353, 0.4, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0696174, 0.134658, 0.201831, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.03919, 0.0885509, 0.139509, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cbjrd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1gw4c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_805p1"]
+bg_color = Color(0.116312, 0.204919, 0.296484, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0366029, 0.0845364, 0.134077, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.014883, 0.0409832, 0.075108, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2aoa"]
+bg_color = Color(0.116312, 0.204919, 0.296484, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0131195, 0.0361432, 0.0684602, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65c5j"]
+bg_color = Color(0.168627, 0.282353, 0.4, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0696174, 0.134658, 0.201831, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.03919, 0.0885509, 0.139509, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a0pmb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1beb8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shuie"]
+bg_color = Color(0.116312, 0.204919, 0.296484, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0366029, 0.0845364, 0.134077, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.014883, 0.0409832, 0.075108, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gakoh"]
+bg_color = Color(0.116312, 0.204919, 0.296484, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0131195, 0.0361432, 0.0684602, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmtft"]
+bg_color = Color(0.168627, 0.282353, 0.4, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0696174, 0.134658, 0.201831, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.03919, 0.0885509, 0.139509, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c36wt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0wlar"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_br5w4"]
+bg_color = Color(0.116312, 0.204919, 0.296484, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0366029, 0.0845364, 0.134077, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.014883, 0.0409832, 0.075108, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul3uo"]
+bg_color = Color(0.116312, 0.204919, 0.296484, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0131195, 0.0361432, 0.0684602, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thvjd"]
+bg_color = Color(0.168627, 0.282353, 0.4, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0696174, 0.134658, 0.201831, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.03919, 0.0885509, 0.139509, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="Animation" id="Animation_hdypc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_877ha"]
+resource_name = "fadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_c2ywo"]
+resource_name = "fadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q8k47"]
+_data = {
+"RESET": SubResource("Animation_hdypc"),
+"fadeIn": SubResource("Animation_877ha"),
+"fadeOut": SubResource("Animation_c2ywo")
+}
 
 [node name="Death Nerf Chooser" type="Control"]
 process_mode = 3
@@ -24,9 +310,9 @@ script = ExtResource("1_qmcym")
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 69.0
-offset_top = 50.0
+offset_top = 24.0
 offset_right = 1063.0
-offset_bottom = 602.0
+offset_bottom = 622.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4x0ve")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -35,9 +321,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -461.0
-offset_top = 81.0
+offset_top = 55.0
 offset_right = -161.0
-offset_bottom = 131.0
+offset_bottom = 105.0
 grow_horizontal = 2
 scale = Vector2(3, 3)
 theme_override_colors/default_color = Color(1, 1, 1, 1)
@@ -55,9 +341,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 84.0
-offset_top = 196.0
+offset_top = 170.0
 offset_right = -796.0
-offset_bottom = -133.0
+offset_bottom = -159.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -68,10 +354,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwvw1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ngm6n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ffixh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5n44a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sbkhe")
 
 [node name="Sprite2D" type="Sprite2D" parent="Option1"]
-position = Vector2(123, 82)
-texture = ExtResource("1_m1s7i")
+position = Vector2(136, 80)
+scale = Vector2(4, 4)
+texture = ExtResource("3_v3msi")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Option1"]
 layout_mode = 1
@@ -84,6 +376,8 @@ offset_right = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_rubww")
+theme_override_font_sizes/normal_font_size = 24
 text = "Choice 1:
 
 choice 1 text"
@@ -94,9 +388,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 429.0
-offset_top = 196.0
+offset_top = 170.0
 offset_right = -451.0
-offset_bottom = -133.0
+offset_bottom = -159.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -107,10 +401,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cbjrd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1gw4c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_805p1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a2aoa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_65c5j")
 
 [node name="Sprite2D" type="Sprite2D" parent="Option2"]
-position = Vector2(123, 82)
-texture = ExtResource("1_m1s7i")
+position = Vector2(136, 80)
+scale = Vector2(4, 4)
+texture = ExtResource("3_v3msi")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Option2"]
 layout_mode = 1
@@ -123,6 +423,8 @@ offset_right = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_rubww")
+theme_override_font_sizes/normal_font_size = 24
 text = "Choice 2:
 
 choice 2 text"
@@ -133,9 +435,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 774.0
-offset_top = 196.0
+offset_top = 170.0
 offset_right = -106.0
-offset_bottom = -133.0
+offset_bottom = -159.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -146,10 +448,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a0pmb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1beb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_shuie")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gakoh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kmtft")
 
 [node name="Sprite2D" type="Sprite2D" parent="Option3"]
-position = Vector2(123, 82)
-texture = ExtResource("1_m1s7i")
+position = Vector2(136, 80)
+scale = Vector2(4, 4)
+texture = ExtResource("3_v3msi")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Option3"]
 layout_mode = 1
@@ -162,34 +470,53 @@ offset_right = -11.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_rubww")
+theme_override_font_sizes/normal_font_size = 24
 text = "Choice 3:
 
 choice 3 text"
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="TextureButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -89.0
-offset_top = 202.0
-offset_right = -33.0
-offset_bottom = 223.0
+offset_left = -118.0
+offset_top = 194.0
+offset_right = -11.0
+offset_bottom = 230.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="TextureButton"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 82.0
-offset_bottom = 43.0
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("2_rubww")
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("2_rubww")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c36wt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0wlar")
+theme_override_styles/hover = SubResource("StyleBoxFlat_br5w4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ul3uo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_thvjd")
 text = "Give Up"
+
+[node name="fadeAnimator" type="AnimationPlayer" parent="."]
+process_mode = 3
+root_node = NodePath("ColorRect")
+libraries = {
+"": SubResource("AnimationLibrary_q8k47")
+}
+
+[node name="ColorRect" type="ColorRect" parent="fadeAnimator"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="fadeOutTimer" type="Timer" parent="fadeAnimator"]
+wait_time = 0.7
+one_shot = true
 
 [connection signal="button_down" from="Option1/TextureButton" to="." method="option1Chosen"]
 [connection signal="button_down" from="Option2/TextureButton" to="." method="option2Chosen"]

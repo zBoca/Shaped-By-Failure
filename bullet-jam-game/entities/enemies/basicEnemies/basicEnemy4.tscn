@@ -1,9 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://lbuj2h0cqc6r"]
+[gd_scene load_steps=15 format=3 uid="uid://lbuj2h0cqc6r"]
 
 [ext_resource type="Script" path="res://entities/enemies/basicEnemies/basicEnemy4Controller.gd" id="1_hsmjj"]
 [ext_resource type="Texture2D" uid="uid://cn8mvkdw6wqtp" path="res://entities/enemies/enemySprites/basicEnemy4.png" id="2_ijh1s"]
 [ext_resource type="Texture2D" uid="uid://dnrcbat7tktoc" path="res://entities/enemies/enemySprites/basicEnemy4Hurt.png" id="3_4npnl"]
 [ext_resource type="PackedScene" uid="uid://blmjbotu2vp2b" path="res://entities/bulletPatterns/basic/smallShotgun.tscn" id="4_u3fyo"]
+[ext_resource type="Texture2D" uid="uid://brol602egmeou" path="res://entities/explosion/explosion1.png" id="5_ugm6i"]
+[ext_resource type="Texture2D" uid="uid://dyy7sy4nddl8s" path="res://entities/explosion/explosion2.png" id="6_epm4d"]
+[ext_resource type="Texture2D" uid="uid://bq5owhqeyqc0w" path="res://entities/explosion/explosion3.png" id="7_h3wwl"]
+[ext_resource type="Texture2D" uid="uid://cs7p63oahbhfj" path="res://entities/explosion/explosion4.png" id="8_uj3ew"]
+[ext_resource type="Texture2D" uid="uid://d3oky5vt7xr0n" path="res://entities/explosion/explosion5.png" id="9_q6ugl"]
+[ext_resource type="Texture2D" uid="uid://cfi6l364cor1i" path="res://entities/explosion/explosion6.png" id="10_8txcg"]
+[ext_resource type="AudioStream" uid="uid://d3opi5pesypt6" path="res://sfx/explosionSfx.wav" id="11_ck3a3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4dx05"]
 animations = [{
@@ -22,6 +29,47 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mc5u6"]
 size = Vector2(32, 32)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ny2xg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ugm6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_epm4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h3wwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uj3ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q6ugl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8txcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q6ugl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uj3ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h3wwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_epm4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ugm6i")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="BasicEnemy4" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_hsmjj")
 
@@ -39,3 +87,14 @@ one_shot = true
 one_shot = true
 
 [node name="SmallShotgun" parent="." instance=ExtResource("4_u3fyo")]
+
+[node name="explosionAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_ny2xg")
+
+[node name="explosionTimer" type="Timer" parent="explosionAnimation"]
+wait_time = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="explosionAnimation"]
+stream = ExtResource("11_ck3a3")
+volume_db = 5.0

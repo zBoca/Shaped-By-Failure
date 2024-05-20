@@ -42,7 +42,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_c2ywo"]
 resource_name = "fadeOut"
-length = 0.5
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -65,6 +65,15 @@ _data = {
 
 [node name="Player Cam" type="Node2D"]
 script = ExtResource("1_ju15u")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1000
+z_as_relative = false
+offset_left = -1016.0
+offset_top = -569.0
+offset_right = 972.0
+offset_bottom = 651.0
+color = Color(0.0208221, 0.050309, 0.0847776, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("2_ndb8q")
@@ -99,6 +108,7 @@ autoplay = "fadeIn"
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D/fadeAnimator"]
 auto_translate_mode = 1
+z_index = 100
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

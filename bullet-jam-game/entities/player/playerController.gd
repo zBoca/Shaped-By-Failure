@@ -7,7 +7,7 @@ func _ready() -> void:
 		inHub = true
 		barUi.hide()
 		minimapUi.hide()
-	elif get_parent().name == "1_Boss" or get_parent().name == "2_Boss" or get_parent().name == "3_Boss":
+	elif get_parent().name == "1_Boss" or get_parent().name == "2_Boss" or get_parent().name == "3_Boss" or get_parent().name == "4_Boss" or get_parent().name == "5_Boss":
 		get_parent().get_node("Player Cam/Camera2D/Area2D").queue_free()
 		get_parent().get_node("Player Cam/Camera2D").zoom = Vector2(0.55, 0.55)
 
@@ -37,6 +37,7 @@ var dir = Vector2(0, 0)
 func allowMove():
 	canMove = true
 	canDash = true
+	$weaponHold.canShoot = true
 
 func movement():
 	if canMove:
@@ -81,18 +82,24 @@ func dash():
 	
 	canDash = true
 
-func takeDmg() -> void:
+func takeDmg(dmg : float = 1.0) -> void:
 	if nerfTracker.hp > 0:
-		nerfTracker.hp -= 1.0
+		nerfTracker.hp -= dmg
 		hurtRecently = true
 		regenTimer.start()
 		cam.doShake()
+		$dmgSound.play()
 	if nerfTracker.hp < 1 and !dead:
 		nerfTracker.hp = 0
 		dead = true
 		die()
 
 func nextLevel(path : String) -> void:
+	canMove = false
+	$teleportSound.play()
+	await get_tree().create_timer(1).timeout
+	get_parent().get_node("Player Cam/Camera2D/fadeAnimator").play("fadeOut")
+	await get_tree().create_timer(0.7).timeout
 	get_tree().change_scene_to_file(path)
 
 func doRegen() -> void:
@@ -109,10 +116,13 @@ func _on_regen_timer_timeout() -> void:
 @onready var nerf2 = $"CanvasLayer/Death Nerf Chooser/Option2"
 @onready var nerf3 = $"CanvasLayer/Death Nerf Chooser/Option3"
 @onready var hpBar = $"CanvasLayer/Bar UI/hpBar"
+@onready var musicPlayer : AudioStreamPlayer = get_node("/root/MusicPlayer")
 var option1
 var option2
 var option3
 func die():
+	musicPlayer.stream_paused = true
+	$dieSound.play()
 	option1 = randi_range(1, 10)
 	option2 = randi_range(1, 10)
 	option3 = randi_range(1, 10)
@@ -135,40 +145,40 @@ func die():
 
 #region NERFING
 var nerfOptions : Dictionary = {
-	1 : ["", 					"25% less max health", 					"res://icon.svg"],
-	2 : ["", 					"Dash Cooldown is 50% longer", 			"res://icon.svg"],
-	3 : ["", 					"Enemies have 50% more health", 		"res://icon.svg"],
-	4 : ["Reinforcements", 		"Enemies fire rate is 50% faster", 		"res://icon.svg"],
-	5 : ["Ball and chain", 		"Dash Distance is 50% less", 			"res://icon.svg"],
-	6 : ["Higher Heat", 		"Enemy bullets are 50% larger", 		"res://icon.svg"],
-	7 : ["", 					"Your fire rate is 50% slower", 		"res://icon.svg"],
-	8 : ["Hollow Tip Rounds", 	"Enemy Bullets move 50% faster", 		"res://icon.svg"],
-	9 : ["", 					"Your movement is 25% slower", 			"res://icon.svg"],
-	10 :["", 					"Health regeneration is 50% slower", 	"res://icon.svg"]
+	1 : ["Weakened", 				"15% less max health", 					"res://ui/nerfAssets/nerfIcons1.png"],
+	2 : ["Out of shape", 			"Dash Cooldown is 25% longer", 			"res://ui/nerfAssets/nerfIcons2.png"],
+	3 : ["Armored Enemies", 		"Enemies have 25% more health", 		"res://ui/nerfAssets/nerfIcons3.png"],
+	4 : ["Reinforcements", 			"Enemies fire rate is 20% faster", 		"res://ui/nerfAssets/nerfIcons4.png"],
+	5 : ["Ball and chain", 			"Dash Distance is 25% less", 			"res://ui/nerfAssets/nerfIcons5.png"],
+	6 : ["Higher Heat", 			"Enemy bullets are 10% larger", 		"res://ui/nerfAssets/nerfIcons6.png"],
+	7 : ["Buuullleeettt tiiimmmeee","Your fire rate is 15% slower", 		"res://ui/nerfAssets/nerfIcons7.png"],
+	8 : ["Hollow Tip Rounds", 		"Enemy Bullets move 10% faster", 		"res://ui/nerfAssets/nerfIcons8.png"],
+	9 : ["Difficult Terrain", 		"Your movement is 15% slower", 			"res://ui/nerfAssets/nerfIcons9.png"],
+	10 :["Deterioration", 			"Health regeneration is 50% slower", 	"res://ui/nerfAssets/nerfIcons10.png"]
 }
 func chooseNerf(choice : int) -> void:
 	match choice:
 		1:
-			nerfTracker.maxHp *= 0.75
+			nerfTracker.maxHp *= 0.85
 		2:
-			nerfTracker.dashCooldown *= 1.5
+			nerfTracker.dashCooldown *= 1.25
 		3:
-			nerfTracker.enemyHpMulti *= 1.5
+			nerfTracker.enemyHpMulti *= 1.25
 			get_tree().call_group("enemy", "increaseHpVals")
 		4:
-			nerfTracker.enemyShootMulti *= 0.5
+			nerfTracker.enemyShootMulti *= 0.8
 			get_tree().call_group("attacks", "increaseFireRate")
 		5:
-			nerfTracker.dashDistance *= 0.5
+			nerfTracker.dashDistance *= 0.75
 		6:
-			nerfTracker.enemyBulletSize *= 1.5
-			nerfTracker.enemyBulletSpeed *= 0.5
+			nerfTracker.enemyBulletSize *= 1.1
+			nerfTracker.enemyBulletSpeed *= 0.9
 		7:
-			nerfTracker.fireRate *= 1.5
+			nerfTracker.fireRate *= 1.15
 		8:
-			nerfTracker.enemyBulletSpeed *= 1.5
+			nerfTracker.enemyBulletSpeed *= 1.1
 		9:
-			nerfTracker.spd *= 0.75
+			nerfTracker.spd *= 0.85
 		10:
 			nerfTracker.regen *= 1.5
 	
@@ -176,5 +186,6 @@ func chooseNerf(choice : int) -> void:
 	nerfTracker.hp = nerfTracker.maxHp
 	dead = false
 	deathNerfChooser.hide()
+	musicPlayer.stream_paused = false
 	get_tree().paused = false
 #endregion

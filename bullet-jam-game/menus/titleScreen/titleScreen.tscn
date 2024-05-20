@@ -1,6 +1,56 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmfa3lg2o0gfo"]
+[gd_scene load_steps=12 format=3 uid="uid://bmfa3lg2o0gfo"]
 
 [ext_resource type="Script" path="res://menus/titleScreen/titleController.gd" id="1_4eldf"]
+[ext_resource type="FontFile" uid="uid://buj3wt7dy82im" path="res://font.ttf" id="2_741pn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylvc1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0axon"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18sch"]
+bg_color = Color(0.116312, 0.204919, 0.296484, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0366029, 0.0845364, 0.134077, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.014883, 0.0409832, 0.075108, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1acv8"]
+bg_color = Color(0.116312, 0.204919, 0.296484, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0131195, 0.0361432, 0.0684602, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vx7sx"]
+bg_color = Color(0.168627, 0.282353, 0.4, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0696174, 0.134658, 0.201831, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.03919, 0.0885509, 0.139509, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 4)
 
 [sub_resource type="Animation" id="Animation_hdypc"]
 length = 0.001
@@ -15,6 +65,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_877ha"]
@@ -32,6 +94,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_c2ywo"]
 resource_name = "fadeOut"
@@ -47,6 +121,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q8k47"]
@@ -65,11 +151,46 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4eldf")
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "play"
+[node name="playButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 250.0
+offset_top = -122.0
+offset_right = 536.0
+offset_bottom = -50.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_741pn")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ylvc1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0axon")
+theme_override_styles/hover = SubResource("StyleBoxFlat_18sch")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1acv8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vx7sx")
+text = "Play"
+
+[node name="exitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -536.0
+offset_top = -122.0
+offset_right = -250.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_741pn")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ylvc1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0axon")
+theme_override_styles/hover = SubResource("StyleBoxFlat_18sch")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1acv8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vx7sx")
+text = "Exit"
 
 [node name="fadeAnimator" type="AnimationPlayer" parent="."]
 root_node = NodePath("ColorRect")
@@ -78,6 +199,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="fadeAnimator"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -85,7 +207,27 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="fadeOutTimer" type="Timer" parent="fadeAnimator"]
-wait_time = 0.5
+wait_time = 0.7
 one_shot = true
 
-[connection signal="button_down" from="Button" to="." method="playButtonPressed"]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_top = 85.0
+offset_right = 576.0
+offset_bottom = 334.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/normal_font = ExtResource("2_741pn")
+theme_override_font_sizes/normal_font_size = 120
+bbcode_enabled = true
+text = "[center]Shaped by Failure[/center]"
+
+[connection signal="button_down" from="playButton" to="." method="playButtonPressed"]
+[connection signal="button_down" from="exitButton" to="." method="exitPressed"]

@@ -1,10 +1,13 @@
 extends Control
 
 @onready var nerfTracker = get_node("/root/NerfTracker")
-@onready var hpBar = get_node("hpBar")
+@onready var hpBar : TextureProgressBar = get_node("hpBar")
 @onready var lowerMaxBar = get_node("lowerMaxBar")
 @onready var dashBar : TextureProgressBar = get_node("dashBar")
 @onready var dashTimer : Timer = get_parent().get_parent().get_node("dashCooldown")
+func _ready() -> void:
+	hpBar.max_value = nerfTracker.DEFAULT_maxHp
+
 func _process(_delta: float) -> void:
 	hpBar.value = nerfTracker.hp
 	lowerMaxBar.value = 10 - nerfTracker.maxHp

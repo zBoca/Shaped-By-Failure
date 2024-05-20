@@ -1,6 +1,6 @@
 extends Node2D
 
-var canShoot := true
+var canShoot := false
 @onready var shootCooldown = get_parent().get_node("shootCooldown")
 @onready var bulletScene = preload("res://entities/player/bullet.tscn")
 @onready var nerfTracker = get_node("/root/NerfTracker")
@@ -17,6 +17,7 @@ func shoot():
 	canShoot = false
 	
 	bullet = bulletScene.instantiate()
+	$shootSound.play()
 	get_parent().get_parent().add_child(bullet)
 	bullet.rotation = rotation
 	bullet.global_position = shootMark.global_position

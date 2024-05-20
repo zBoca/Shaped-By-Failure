@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bibv3md0amikx"]
 
-[ext_resource type="Script" path="res://entities/bulletPatterns/scripts/10shotDirect.gd" id="1_7buef"]
+[ext_resource type="Script" path="res://entities/bulletPatterns/scripts/storm10shotDirect.gd" id="1_7buef"]
 
 [node name="10ShotDirect" type="Node2D"]
 script = ExtResource("1_7buef")

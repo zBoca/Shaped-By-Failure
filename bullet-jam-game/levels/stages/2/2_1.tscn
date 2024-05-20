@@ -35,9 +35,10 @@ tile_set = ExtResource("2_l3ekd")
 
 [node name="portal" parent="." groups=["portal"] instance=ExtResource("5_uvy61")]
 position = Vector2(1204, -521)
-nextLevelPath = "res://levels/hub/hubLevel.tscn"
+nextLevelPath = "res://levels/stages/2/2_2.tscn"
 
 [node name="Player" parent="." instance=ExtResource("2_8dpvo")]
+position = Vector2(31, -1)
 
 [node name="Player Cam" parent="." instance=ExtResource("3_ek3oc")]
 
